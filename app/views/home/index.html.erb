@@ -1,0 +1,11 @@
+<% if current_cliente %>
+  <h3>O que deseja fazer, <i><%= current_cliente.nome %></i>?</h3>
+  <li><%= link_to "Editar conta", edit_cliente_registration_path %></li>
+  <li><%= link_to "Sair", destroy_cliente_session_path, method: :delete  %></li>
+<% else %>
+  <h2>Seja bem vindo ao sistema!</h2>
+  <li><%= link_to "Cadastre-se", new_cliente_registration_path %></li>
+  <li><%= link_to "Faça login", new_cliente_session_path %></li>
+  <br><br>
+  <li><%= link_to "Site de onde peguei referencias", "https://dev.to/casseylottman/adding-a-field-to-your-sign-up-form-with-devise-10i1" %></li>
+<% end %>
